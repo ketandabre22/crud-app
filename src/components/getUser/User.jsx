@@ -21,13 +21,13 @@ const User = () => {
           <tr>
             <td>1.</td>
             <td>Ketan</td>
-            <td>krtan@gmail.com</td>
+            <td>ketan@gmail.com</td>
             <td className="actionButton">
               <button>
                 <i className="fa-solid fa-trash"></i>
               </button>
               <Link to={"/edit"}>
-                <i className="fa-solid fa-file-pen"></i>
+                <i class="fa-solid fa-user-pen"></i>
               </Link>
             </td>
           </tr>
