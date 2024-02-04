@@ -18,31 +18,6 @@ const Add = () => {
     setUser({ ...user, [name]: value });
   };
 
-  //  const submitForm = async (e) => {
-  //    e.preventDefault();
-  //    await axios
-  //      .post("http://localhost:8000/api/create", user)
-  //      .then((response) => {
-  //        toast.success(response.data.msg, { position: "top-right" });
-  //        navigate("/");
-  //      })
-  //      .catch((error) => console.log(error));
-  //  };
-
-  // const submitForm = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:8000/api/create",
-  //       user
-  //     );
-  //     toast.success(response.data.msg, { position: "top-right" });
-  //     navigate("/");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const submitForm = async (e) => {
     e.preventDefault();
     try {
