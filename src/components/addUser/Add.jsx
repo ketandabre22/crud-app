@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Add.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import toast from 'react-hot-toast'
+import toast from "react-hot-toast";
 
 const Add = () => {
   const users = {
@@ -29,14 +29,34 @@ const Add = () => {
   //      .catch((error) => console.log(error));
   //  };
 
+  // const submitForm = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:8000/api/create",
+  //       user
+  //     );
+  //     toast.success(response.data.msg, { position: "top-right" });
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const submitForm = async (e) => {
     e.preventDefault();
     try {
+      console.log("Sending data:", user);
       const response = await axios.post(
         "http://localhost:8000/api/create",
         user
       );
-      toast.success(response.data.msg, { position: "top-right" });
+      const toastDuration = 4000;
+      console.log("Response:", response.data);
+      toast.success(`User Added Successfully`, {
+        position: "top-right",
+        duration: toastDuration,
+      });
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -46,7 +66,7 @@ const Add = () => {
   return (
     <div className="addUser">
       <Link className="link" to={"/"}>
-        Back{" "}
+        Back
       </Link>
       <h2>Add New User</h2>
       <form className="addUserForm" onSubmit={submitForm}>
