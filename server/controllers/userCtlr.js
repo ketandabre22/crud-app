@@ -10,7 +10,7 @@ export const create = async (req, res) => {
       });
     }
     const savedData = await userData.save();
-    res.status(200).json(user);
+    res.status(200).json(userData);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
